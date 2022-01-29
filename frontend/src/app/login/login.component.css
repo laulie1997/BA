@@ -1,0 +1,14 @@
+.container{
+  margin: 3%;
+  margin-left: 15%;
+}
+.card{
+  margin: 3%;
+  width: 50%;
+}
+button {
+  margin: 1.5%;
+}
+.form-group{
+  margin-left: 30%;
+}
