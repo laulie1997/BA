@@ -22,6 +22,9 @@ import { environment } from 'src/environments/environment';
 import {AngularFireModule } from '@angular/fire/compat';
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import { LoginComponent } from './login/login.component';
+import {LoginModule} from "./models/login/login.module";
+import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
 
 
 const icons = {
@@ -40,6 +43,7 @@ const icons = {
     UrlaubComponent,
     TeamzeitenComponent,
     HomeComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -56,7 +60,9 @@ const icons = {
     MatListModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    LoginModule,
+    ReactiveFormsModule
 
 
   ],

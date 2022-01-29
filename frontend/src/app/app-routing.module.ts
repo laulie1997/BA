@@ -5,8 +5,10 @@ import {ArbeitsuebersichtComponent} from "./seiten/arbeitsuebersicht/arbeitsuebe
 import {TeamzeitenComponent} from "./seiten/teamzeiten/teamzeiten.component";
 import {UrlaubComponent} from "./seiten/urlaub/urlaub.component";
 import {ZeiterfassungComponent} from "./seiten/zeiterfassung/zeiterfassung.component";
+import {LoginComponent} from "./login/login.component";
 
 const routes: Routes = [
+  { path: '', component: LoginComponent},
   { path: 'abwesenheit', component: AbwesenheitComponent},
   { path: 'arbeitsuebersicht', component: ArbeitsuebersichtComponent},
   { path: 'teamzeiten', component: TeamzeitenComponent},
