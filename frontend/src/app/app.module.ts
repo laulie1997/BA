@@ -25,6 +25,7 @@ import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import { LoginComponent } from './login/login.component';
 import {LoginModule} from "./models/login/login.module";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const icons = {
@@ -44,6 +45,7 @@ const icons = {
     TeamzeitenComponent,
     HomeComponent,
     LoginComponent,
+    DashboardComponent,
 
   ],
   imports: [

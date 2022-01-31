@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,18 @@ export class LoginComponent implements OnInit {
   password!: string;
 
   constructor(
-  private auth: AngularFireAuth) { }
+  private auth: AngularFireAuth,
+  private router: Router) { }
 
   ngOnInit(): void {
 
   }
 
   login(){
-    this.auth.signInWithEmailAndPassword(this.email,this.password)
-      .catch(error => console.log(error.code))
-      .then(res => console.log(res));
+    this.auth.signInWithEmailAndPassword(this.email,this.password).then(()=>
+    {
+      alert('Login successful');
+      this.router.navigate(['dashboard']);
+    }).catch(err=> alert(err))
   }
 }
