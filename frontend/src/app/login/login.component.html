@@ -4,14 +4,14 @@
       <h1>Login</h1>
     </div>
     <div class="card-body">
-      <form [formGroup]="loginForm">
       <label class="form-label">E-Mail</label>
-      <input class="form-control">
+      <input type="text" class="form-control" [(ngModel)]="email">
       <label class="form-label">Passwort</label>
-      <input class="form-control" type="password">
-      <button type="submit" class="btn btn-primary">Einloggen</button>
+      <input class="form-control" type="password" [(ngModel)]="password">
+
+      <button type="submit" class="btn btn-primary" (click)="login()">Einloggen</button>
       <button class="btn btn-secondary">Passwort vergessen</button>
-      </form>
+
     </div>
   </div>
 </div>

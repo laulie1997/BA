@@ -24,7 +24,7 @@ import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
 import { LoginComponent } from './login/login.component';
 import {LoginModule} from "./models/login/login.module";
-import {FormBuilder, FormGroup, ReactiveFormsModule} from "@angular/forms";
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 const icons = {
@@ -62,7 +62,8 @@ const icons = {
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     LoginModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
 
   ],

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import {AngularFireAuth} from "@angular/fire/compat/auth";
 
 @Component({
   selector: 'app-login',
@@ -7,14 +7,19 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
-  constructor(private fb:FormBuilder) { }
+  email!: string;
+  password!: string;
+
+  constructor(
+  private auth: AngularFireAuth) { }
 
   ngOnInit(): void {
-    this.loginForm = this.fb.group({
-      emailControl: new FormControl('', Validators.required),
-      passwordControl: new FormControl('', Validators.required)
-    });
+
   }
 
+  login(){
+    this.auth.signInWithEmailAndPassword(this.email,this.password)
+      .catch(error => console.log(error.code))
+      .then(res => console.log(res));
+  }
 }
