@@ -21,7 +21,7 @@ export class NavigationComponent {
     this.authService.logout();
   }
   isLoggedIn(){
-    this.authService.isLoggedIn();
+    return !!localStorage.getItem('user');
   }
 
   constructor(private breakpointObserver: BreakpointObserver,

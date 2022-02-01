@@ -10,18 +10,16 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
 
-
   constructor(private afAuth: AngularFireAuth,
               private router: Router) { }
-  isLoggedIn(){
-    return localStorage.getItem('user');
-  }
+
   //login(email:string, password:string){
  //  return this.afAuth.signInWithEmailAndPassword(email,password);
 
 //  }
   logout(){
    this.afAuth.signOut().then(r => alert('You have logged out'));
+   localStorage.removeItem('user');
    this.router.navigate(['']);
   }
   getAuth(){
@@ -31,10 +29,9 @@ export class AuthService {
     this.afAuth.signInWithEmailAndPassword(email,password).then(()=>
     {
       alert('Login successful');
+      localStorage.setItem('user', 'user');
       this.router.navigate(['dashboard']);
     }).catch(err=> alert('Login failed: '+ err.code ))
   }
-
-
 
 }

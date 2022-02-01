@@ -9,4 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   constructor() {
   }
+  isLoggedIn(){
+    return !!localStorage.getItem('user');
+  }
 }
