@@ -24,6 +24,6 @@ export class LoginComponent implements OnInit {
     {
       alert('Login successful');
       this.router.navigate(['dashboard']);
-    }).catch(err=> alert(err))
+    }).catch(err=> alert('Login failed: '+ err.code +''))
   }
 }
