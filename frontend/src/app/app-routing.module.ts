@@ -8,21 +8,22 @@ import {ZeiterfassungComponent} from "./seiten/zeiterfassung/zeiterfassung.compo
 import {LoginComponent} from "./login/login.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AngularFireAuthGuard} from "@angular/fire/compat/auth-guard";
+import {AuthGuard} from "./shared/auth.guard";
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'abwesenheit', component: AbwesenheitComponent,
-  canActivate: [AngularFireAuthGuard]},
+  canActivate: [AuthGuard]},
   { path: 'dashboard', component: DashboardComponent,
-    canActivate: [AngularFireAuthGuard]},
+    canActivate: [AuthGuard]},
   { path: 'arbeitsuebersicht', component: ArbeitsuebersichtComponent,
-    canActivate: [AngularFireAuthGuard]},
+    canActivate: [AuthGuard]},
   { path: 'teamzeiten', component: TeamzeitenComponent,
-    canActivate: [AngularFireAuthGuard]},
+    canActivate: [AuthGuard]},
   { path: 'urlaub', component: UrlaubComponent,
-    canActivate: [AngularFireAuthGuard]},
+    canActivate: [AuthGuard]},
   { path: 'zeiterfassung', component: ZeiterfassungComponent,
-    canActivate: [AngularFireAuthGuard]},
+    canActivate: [AuthGuard]},
 ];
 
 @NgModule({

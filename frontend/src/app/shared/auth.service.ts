@@ -33,5 +33,8 @@ export class AuthService {
       this.router.navigate(['dashboard']);
     }).catch(err=> alert('Login failed: '+ err.code ))
   }
+  isLoggedIn(){
+    return !!localStorage.getItem('user');
+  }
 
 }
