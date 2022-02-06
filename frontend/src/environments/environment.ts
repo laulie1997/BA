@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  useEmulators: false,
   firebase: {
     apiKey: "AIzaSyD1YOeqNaJtbfieIZ7PveMjwNBMJhTTBqE",
     authDomain: "zeiterfassung-ba.firebaseapp.com",

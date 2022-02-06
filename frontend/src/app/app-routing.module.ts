@@ -9,6 +9,7 @@ import {LoginComponent} from "./login/login.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AngularFireAuthGuard} from "@angular/fire/compat/auth-guard";
 import {AuthGuard} from "./shared/auth.guard";
+import {RoleGuard} from "./shared/role.guard";
 
 const routes: Routes = [
   { path: '', component: LoginComponent},
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'arbeitsuebersicht', component: ArbeitsuebersichtComponent,
     canActivate: [AuthGuard]},
   { path: 'teamzeiten', component: TeamzeitenComponent,
-    canActivate: [AuthGuard]},
+    canActivate: [AuthGuard, RoleGuard]},
   { path: 'urlaub', component: UrlaubComponent,
     canActivate: [AuthGuard]},
   { path: 'zeiterfassung', component: ZeiterfassungComponent,

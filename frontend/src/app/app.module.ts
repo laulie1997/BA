@@ -22,10 +22,12 @@ import { environment } from 'src/environments/environment';
 import {AngularFireModule } from '@angular/fire/compat';
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 import {AngularFireAuthModule} from "@angular/fire/compat/auth";
+import { USE_EMULATOR as USE_AUTH_EMULATOR } from '@angular/fire/compat/auth';
 import { LoginComponent } from './login/login.component';
 import {LoginModule} from "./models/login/login.module";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 
 
 const icons = {
@@ -65,11 +67,14 @@ const icons = {
     AngularFireAuthModule,
     LoginModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFirestoreModule
 
 
   ],
-  providers: [],
+  providers: [
+    {provide: USE_AUTH_EMULATOR, useValue: environment.useEmulators ? ['http://localhost', 9099]: undefined}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
