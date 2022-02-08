@@ -13,6 +13,7 @@ export class RoleService {
 
   constructor(private afs: AngularFirestore,
               ) {
+
     // @ts-ignore
     this.user = this.afs.collection('users').valueChanges()//.subscribe(
     //  data => console.log(JSON.stringify(data)),
