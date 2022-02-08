@@ -1,4 +1,5 @@
 export interface Arbeitszeit {
+  [x: string]: any;
   user?: string;
   datum?: string;
   astart?: string;

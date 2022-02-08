@@ -12,9 +12,10 @@ export class ZeiterfassungComponent implements OnInit {
   datum!: any;
   astart!: string;
   aende!: string;
-  pstart!: string
+  pstart!: string;
   pende!: string;
   taetigkeiten!: string;
+
 
 arbeitszeit: Arbeitszeit = {
   user: '',
@@ -43,5 +44,7 @@ arbeitszeit: Arbeitszeit = {
   console.log(this.arbeitszeit);
 this.zs.addValue(this.arbeitszeit);
   }
+
+
 
 }
