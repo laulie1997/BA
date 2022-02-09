@@ -28,6 +28,7 @@ import {LoginModule} from "./models/login/login.module";
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
+import { DatePipe } from '@angular/common';
 
 
 const icons = {
@@ -68,12 +69,14 @@ const icons = {
     LoginModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+
 
 
   ],
   providers: [
-    {provide: USE_AUTH_EMULATOR, useValue: environment.useEmulators ? ['http://localhost', 9099]: undefined}
+    {provide: USE_AUTH_EMULATOR, useValue: environment.useEmulators ? ['http://localhost', 9099]: undefined},
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })

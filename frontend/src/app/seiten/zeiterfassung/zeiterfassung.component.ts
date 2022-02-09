@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Arbeitszeit } from 'src/app/models/arbeitszeit';
 import {AuthService} from "../../shared/auth.service";
 import {ZeiterfassungService} from "../../shared/zeiterfassung.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-zeiterfassung',
@@ -29,7 +30,8 @@ arbeitszeit: Arbeitszeit = {
 
 
   constructor(private authService: AuthService,
-              private zs : ZeiterfassungService) { }
+              private zs : ZeiterfassungService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -43,6 +45,8 @@ arbeitszeit: Arbeitszeit = {
   this.arbeitszeit.taetigkeiten = this.taetigkeiten;
   console.log(this.arbeitszeit);
 this.zs.addValue(this.arbeitszeit);
+alert("Eintrag wurde hinzugefügt");
+this.router.navigate(['zeiterfassung']);
   }
 
 

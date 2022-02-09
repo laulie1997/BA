@@ -2,11 +2,6 @@ import { Injectable } from '@angular/core';
 import { Arbeitszeit } from '../models/arbeitszeit';
 import {Observable} from "rxjs";
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, Query, } from "@angular/fire/compat/firestore";
-import {collection, getFirestore, query, where} from "@angular/fire/firestore";
-import {get} from "@angular/fire/database";
-import {map} from "rxjs/operators";
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +9,7 @@ import {map} from "rxjs/operators";
 export class ZeiterfassungService {
   arbeitszeit!: Observable<Arbeitszeit>;
   arbeitszeitCollection!: AngularFirestoreCollection<Arbeitszeit>;
-  arbeitszeitDoc!: AngularFirestoreDocument<Arbeitszeit>;
+
 
 
   constructor(private afs: AngularFirestore) {
@@ -31,8 +26,4 @@ export class ZeiterfassungService {
     this.arbeitszeitCollection.add(arbeitszeit);
   }
 
-  getIDValue(): Observable<any> {
-    return this.afs.collection('arbeitszeit',
-      ref => ref.where("user", "array-contains", localStorage.getItem('user'))).valueChanges();
-  }
 }

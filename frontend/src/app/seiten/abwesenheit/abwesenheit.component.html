@@ -8,10 +8,10 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">Berta Bohne</th>
-    <td>16.02.2022</td>
-    <td>20.02.2022</td>
+  <tr *ngFor="let urlaub of urlaub">
+    <th scope="row">{{urlaub.vorname}} {{urlaub.nachname}}</th>
+    <td>{{urlaub.start}}</td>
+    <td>{{urlaub.ende}}</td>
 
   </tr>
 </table>
