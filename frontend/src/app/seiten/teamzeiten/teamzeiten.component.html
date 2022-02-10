@@ -1,12 +1,30 @@
 <div class="container">
-  <div class="card">
-    <div class="card-header">
-      <h1>Mein Team</h1>
-    </div>
-    <div class="card-body">
-  <a [routerLink]="['/arbeitsuebersicht']">Max Mustermann</a>
-      <br>
-  <a [routerLink]="['/arbeitsuebersicht']">Bertha Bohne</a>
-    </div>
-</div>
+<h1>Arbeitsübersicht</h1>
+<table class="table table-striped table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Datum</th>
+    <th scope="col">Start</th>
+    <th scope="col">Ende</th>
+    <th scope="col">Pause Anfang</th>
+    <th scope="col">Pause Ende</th>
+    <th scope="col">Tätigkeiten</th>
+    <th scope="col">Email</th>
+    <th scope="col">Projekt</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let arbeitszeit of arbeitszeit">
+    <th scope="row">{{arbeitszeit.datum }}</th>
+    <td>{{arbeitszeit.astart}}</td>
+    <td>{{arbeitszeit.aende}}</td>
+    <td>{{arbeitszeit.pstart}}</td>
+    <td>{{arbeitszeit.pende}}</td>
+    <td>{{arbeitszeit.taetigkeiten}}</td>
+    <th>{{arbeitszeit.user_name}}</th>
+    <th>{{arbeitszeit.projekt}}</th>
+  </tr>
+
+</table>
 </div>

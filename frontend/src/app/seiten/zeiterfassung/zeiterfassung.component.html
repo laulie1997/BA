@@ -2,17 +2,24 @@
   <div class="card-header">
     <h1>Arbeitszeit erfassen</h1>
   </div>
-  <form >
+  <form #f="ngForm">
   <div class="card-body">
 
     <div class="row">
       <div class="col">
         <label class="form-label">Datum</label>
-        <input type="date" class="form-control" [(ngModel)]="datum" name="datum">
+        <input required type="date" class="form-control" [(ngModel)]="datum" name="datum" >
       </div>
       <div class="col">
-        <label class="form-label">Zeit total</label>
-        <input class="form-control" readonly>
+        <label class="form-label">Projekt</label>
+        <br>
+          <select required class="form-select" [(ngModel)]="projekt" name="projekt">
+        <option value="Projekt auswählen">Projekt auswählen:</option>
+        <option value="Projekt A">Projekt A</option>
+        <option value="Projekt B">Projekt B</option>
+        <option value="Projekt C">Projekt C</option>
+        <option value="Projekt D">Projekt D</option>
+      </select>
       </div>
     </div>
       <div class="card">
@@ -23,11 +30,11 @@
     <div class="row">
       <div class="col">
         <label class="form-label">Start</label>
-        <input type="time" class="form-control" [(ngModel)]="astart" name="astart">
+        <input required type="time" class="form-control" [(ngModel)]="astart" name="astart">
       </div>
       <div class="col">
         <label class="form-label">Ende</label>
-        <input type="time" class="form-control" [(ngModel)]="aende" name="aende">
+        <input required type="time" class="form-control" [(ngModel)]="aende" name="aende">
       </div>
     </div>
       </div>
@@ -40,11 +47,11 @@
     <div class="row">
       <div class="col">
         <label class="form-label">Von</label>
-        <input type="time" class="form-control" [(ngModel)]="pstart" name="pstart">
+        <input required type="time" class="form-control" [(ngModel)]="pstart" name="pstart">
       </div>
         <div class="col">
         <label class="form-label">Bis</label>
-        <input type="time" class="form-control" [(ngModel)]="pende" name="pende">
+        <input required type="time" class="form-control" [(ngModel)]="pende" name="pende">
       </div>
       </div>
           </div>
@@ -56,7 +63,7 @@
       <div class="card-body">
             <div class="row">
               <div class="col">
-                <textarea class="form-control" [(ngModel)]="taetigkeiten" name="taetigkeiten"></textarea>
+                <textarea required class="form-control" [(ngModel)]="taetigkeiten" name="taetigkeiten"></textarea>
               </div>
             </div>
             </div>
@@ -64,7 +71,7 @@
 
         </div>
     <div class="form-group">
-      <button type="submit" class="btn btn-primary" (click)="onSubmit()">Eintrag hinzufügen</button>
+      <button type="submit" class="btn btn-primary" (click)="onSubmit()" [disabled]="!f.valid">Eintrag hinzufügen</button>
       <button class="btn btn-secondary">Abbrechen</button>
     </div>
 </form>

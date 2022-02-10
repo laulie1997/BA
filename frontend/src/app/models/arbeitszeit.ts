@@ -1,5 +1,5 @@
 export interface Arbeitszeit {
-  [x: string]: any;
+  user_name?:string;
   user?: string;
   datum?: string;
   astart?: string;
@@ -7,4 +7,5 @@ export interface Arbeitszeit {
   pstart?: string;
   pende?: string;
   taetigkeiten?: string;
+  projekt?: string;
 }

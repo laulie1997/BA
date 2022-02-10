@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {AngularFireAuth} from "@angular/fire/compat/auth";
 import {map} from "rxjs/operators";
 import {Router} from "@angular/router";
+import {getAuth} from "@angular/fire/auth";
 
 
 
@@ -11,6 +12,8 @@ import {Router} from "@angular/router";
 })
 export class AuthService {
   authState: any = null;
+  user! : string| any;
+
   constructor(private afAuth: AngularFireAuth,
               private router: Router) {
     this.afAuth.authState.subscribe((auth =>{
@@ -44,6 +47,9 @@ export class AuthService {
   get currentUserId(): string {
     return (this.authState !== null) ? this.authState.uid : ''
   }
+get currentUserEmail(): string {
+  return (this.authState !== null) ? this.authState.email : ''
+}
 
 
 }
