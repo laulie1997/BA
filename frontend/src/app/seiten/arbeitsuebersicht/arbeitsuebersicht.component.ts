@@ -33,6 +33,8 @@ arbeitszeit!: Arbeitszeit[] |any;
   }
 
 deleteValue(event: Event, arbeitszeit:Arbeitszeit){
-    this.zs.deleteValue(arbeitszeit);
+    if (confirm("Soll dieser Eintrag gelöscht werden?")) {
+      this.zs.deleteValue(arbeitszeit);
+    }
 }
 }
