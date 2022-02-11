@@ -1,4 +1,5 @@
 export interface Arbeitszeit {
+  id?: string;
   user_name?:string;
   user?: string;
   datum?: string;

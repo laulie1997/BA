@@ -3,6 +3,7 @@ import {Arbeitszeit} from 'src/app/models/arbeitszeit';
 import {ZeiterfassungService} from "../../shared/zeiterfassung.service";
 import {AuthService} from "../../shared/auth.service";
 import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {map} from "rxjs/operators";
 
 
 @Component({
@@ -18,17 +19,20 @@ arbeitszeit!: Arbeitszeit[] |any;
 
   ngOnInit(): void {
  this.afs.collection('arbeitszeit',
-   ref => ref.where("user", "==", localStorage.getItem('user'))).valueChanges()
+   ref => ref.where("user", "==", localStorage.getItem('user'))).snapshotChanges()
+   .pipe(map(snaps =>{
+     return snaps.map(a=> {
+       const data = a.payload.doc.data() as Arbeitszeit;
+       data.id = a.payload.doc.id;
+       return data;
+     })
+   }))
    .subscribe( val => {
      this.arbeitszeit = val;
    });
-
-
-     //console.log(JSON.stringify(values));
-    // console.log(localStorage.getItem('user'));
-
-
   }
 
-
+deleteValue(event: Event, arbeitszeit:Arbeitszeit){
+    this.zs.deleteValue(arbeitszeit);
+}
 }

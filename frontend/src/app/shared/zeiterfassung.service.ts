@@ -7,9 +7,9 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument, 
   providedIn: 'root'
 })
 export class ZeiterfassungService {
-  arbeitszeit!: Observable<Arbeitszeit>;
+  arbeitszeit!: Observable<Arbeitszeit[]>;
   arbeitszeitCollection!: AngularFirestoreCollection<Arbeitszeit>;
-
+arbeitszeitDoc!: AngularFirestoreDocument<Arbeitszeit>;
 
 
   constructor(private afs: AngularFirestore) {
@@ -24,6 +24,11 @@ export class ZeiterfassungService {
 
   addValue(arbeitszeit: Arbeitszeit) {
     this.arbeitszeitCollection.add(arbeitszeit);
+  }
+
+  deleteValue(arbeitszeit: Arbeitszeit){
+    this.arbeitszeitDoc= this.afs.doc(`arbeitszeit/${arbeitszeit.id}`);
+    this.arbeitszeitDoc.delete();
   }
 
 }

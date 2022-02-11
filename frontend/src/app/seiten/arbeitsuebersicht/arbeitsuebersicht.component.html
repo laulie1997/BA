@@ -9,18 +9,20 @@
     <th scope="col">Pause Ende</th>
     <th scope="col">Tätigkeiten</th>
     <th scope="col">Bearbeiten</th>
+    <th scope="col">Löschen</th>
   </tr>
   </thead>
   <tbody>
 
   <tr *ngFor="let arbeitszeit of arbeitszeit">
-    <th scope="row">{{arbeitszeit.datum }}</th>
+    <th scope="row">{{arbeitszeit.date }}</th>
     <td>{{arbeitszeit.astart}}</td>
     <td>{{arbeitszeit.aende}}</td>
     <td>{{arbeitszeit.pstart}}</td>
     <td>{{arbeitszeit.pende}}</td>
     <td>{{arbeitszeit.taetigkeiten}}</td>
     <th><button class="btn btn-primary">Bearbeiten</button> </th>
+    <th><button (click)="deleteValue($event, arbeitszeit)" class="btn btn-danger">Löschen</button> </th>
   </tr>
 
 </table>
