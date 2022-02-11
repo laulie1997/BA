@@ -12,7 +12,9 @@ import {map} from "rxjs/operators";
   styleUrls: ['./arbeitsuebersicht.component.css']
 })
 export class ArbeitsuebersichtComponent implements OnInit {
-arbeitszeit!: Arbeitszeit[] |any;
+
+
+  arbeitszeit!: Arbeitszeit[] |any;
   constructor(private zs: ZeiterfassungService,
               private authService: AuthService,
              private afs: AngularFirestore) { }

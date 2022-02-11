@@ -1,6 +1,6 @@
 <div class="container">
 <h1>Arbeitsübersicht</h1>
-<table class="table table-striped table-hover">
+<table id="excel-table" class="table table-striped table-hover">
   <thead>
   <tr>
     <th scope="col">Datum</th>
@@ -27,4 +27,7 @@
   </tr>
 
 </table>
+  <button class="btn btn-primary" (click)="exportexcel()">
+   Export
+  </button>
 </div>

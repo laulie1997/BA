@@ -1,5 +1,5 @@
 <h1>Arbeitsübersicht</h1>
-<table class="table table-striped table-hover">
+<table  class="table table-striped table-hover">
   <thead>
   <tr>
     <th scope="col">Datum</th>
@@ -8,7 +8,6 @@
     <th scope="col">Pause Anfang</th>
     <th scope="col">Pause Ende</th>
     <th scope="col">Tätigkeiten</th>
-    <th scope="col">Bearbeiten</th>
     <th scope="col">Löschen</th>
   </tr>
   </thead>
@@ -21,8 +20,10 @@
     <td>{{arbeitszeit.pstart}}</td>
     <td>{{arbeitszeit.pende}}</td>
     <td>{{arbeitszeit.taetigkeiten}}</td>
-    <th><button class="btn btn-primary">Bearbeiten</button> </th>
+
     <th><button (click)="deleteValue($event, arbeitszeit)" class="btn btn-danger">Löschen</button> </th>
   </tr>
 
 </table>
+
+
