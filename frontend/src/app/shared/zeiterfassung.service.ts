@@ -30,5 +30,8 @@ arbeitszeitDoc!: AngularFirestoreDocument<Arbeitszeit>;
     this.arbeitszeitDoc= this.afs.doc(`arbeitszeit/${arbeitszeit.id}`);
     this.arbeitszeitDoc.delete();
   }
-
+ updateValue(arbeitszeit:Arbeitszeit){
+   this.arbeitszeitDoc= this.afs.doc(`arbeitszeit/${arbeitszeit.id}`);
+   this.arbeitszeitDoc.update(arbeitszeit);
+ }
 }

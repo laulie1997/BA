@@ -15,6 +15,13 @@ export class ArbeitsuebersichtComponent implements OnInit {
 
 
   arbeitszeit!: Arbeitszeit[] |any;
+  datum!: any;
+  astart!: string;
+  aende!: string;
+  pstart!: string;
+  pende!: string;
+  taetigkeiten!: string;
+  projekt!: string;
   constructor(private zs: ZeiterfassungService,
               private authService: AuthService,
              private afs: AngularFirestore) { }
@@ -39,4 +46,5 @@ deleteValue(event: Event, arbeitszeit:Arbeitszeit){
       this.zs.deleteValue(arbeitszeit);
     }
 }
+
 }

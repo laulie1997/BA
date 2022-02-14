@@ -13,9 +13,17 @@
     <th scope="col">Projekt</th>
   </tr>
   </thead>
-  <tbody>
-
-  <tr *ngFor="let arbeitszeit of arbeitszeit">
+<tr>
+    <th ><input class="form-control" type="text" [(ngModel)]="datum" (ngModelChange)="searchDate()"></th>
+    <td><input class="form-control" type="text" [(ngModel)]="astart" (ngModelChange)="searchStart()"></td>
+    <td><input class="form-control" type="text" [(ngModel)]="aende" (ngModelChange)="searchEnd()"></td>
+    <td><input class="form-control" type="text" [(ngModel)]="pstart" (ngModelChange)="searchPStart()" ></td>
+    <td><input class="form-control" type="text" [(ngModel)]="pende" (ngModelChange)="searchPEnd()"></td>
+    <td><input class="form-control" type="text" [(ngModel)]="taetigkeiten" (ngModelChange)="searchTaetigkeit()"></td>
+    <th><input class="form-control" type="text" name="user_name" [(ngModel)]="user_name" (ngModelChange)="searchName()"></th>
+    <th><input class="form-control" type="text" [(ngModel)]="projekt" (ngModelChange)="searchProject()"></th>
+  </tr>
+<tr *ngFor="let arbeitszeit of arbeitszeit">
     <th scope="row">{{arbeitszeit.datum }}</th>
     <td>{{arbeitszeit.astart}}</td>
     <td>{{arbeitszeit.aende}}</td>
@@ -27,7 +35,7 @@
   </tr>
 
 </table>
-  <button class="btn btn-primary" (click)="exportexcel()">
+  <button class="btn btn-primary" (click)="exportExcel()">
    Export
   </button>
 </div>

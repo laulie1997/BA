@@ -29,6 +29,8 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from "@angular
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AngularFirestoreModule} from "@angular/fire/compat/firestore";
 import { DatePipe } from '@angular/common';
+import { Ng2SearchPipeModule} from "ng2-search-filter";
+
 
 
 const icons = {
@@ -70,6 +72,7 @@ const icons = {
     ReactiveFormsModule,
     FormsModule,
     AngularFirestoreModule,
+    Ng2SearchPipeModule
 
 
 
