@@ -24,7 +24,7 @@ export class RoleGuard implements CanActivate {
     //  console.log(JSON.stringify(this.user));
     });
 
-      if (JSON.stringify(this.user).includes(<string>localStorage.getItem('user'))) {
+      if (JSON.stringify(this.user).includes(<string>sessionStorage.getItem('user'))) {
 
         console.log(this.user);
         console.log(this.authService.currentUserId);

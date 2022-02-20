@@ -28,7 +28,7 @@ export class ArbeitsuebersichtComponent implements OnInit {
 
   ngOnInit(): void {
  this.afs.collection('arbeitszeit',
-   ref => ref.where("user", "==", localStorage.getItem('user'))).snapshotChanges()
+   ref => ref.where("user", "==", sessionStorage.getItem('user'))).snapshotChanges()
    .pipe(map(snaps =>{
      return snaps.map(a=> {
        const data = a.payload.doc.data() as Arbeitszeit;

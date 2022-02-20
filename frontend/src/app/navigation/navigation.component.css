@@ -16,5 +16,6 @@
   z-index: 1;
 }
 #button{
-  margin-left: 70%;
+margin-left: auto;
+  display: block;
 }

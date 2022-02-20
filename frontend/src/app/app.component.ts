@@ -10,6 +10,6 @@ export class AppComponent {
   constructor() {
   }
   isLoggedIn(){
-    return !!localStorage.getItem('user');
+    return !!sessionStorage.getItem('user');
   }
 }

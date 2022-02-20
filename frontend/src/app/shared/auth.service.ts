@@ -27,7 +27,7 @@ export class AuthService {
 //  }
   logout(){
    this.afAuth.signOut().then(r => alert('You have logged out'));
-   localStorage.removeItem('user');
+   sessionStorage.removeItem('user');
    this.router.navigate(['']);
   }
   getAuth(){
@@ -37,12 +37,12 @@ export class AuthService {
     this.afAuth.signInWithEmailAndPassword(email,password).then(()=>
     {
       alert('Login successful');
-      localStorage.setItem('user', this.currentUserId);
+      sessionStorage.setItem('user', this.currentUserId);
       this.router.navigate(['dashboard']);
     }).catch(err=> alert('Login failed: '+ err.code ))
   }
   isLoggedIn(){
-    return !!localStorage.getItem('user');
+    return !!sessionStorage.getItem('user');
   }
   get currentUserId(): string {
     return (this.authState !== null) ? this.authState.uid : ''
