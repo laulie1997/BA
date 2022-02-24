@@ -23,7 +23,7 @@
     <th><input class="form-control" type="text" name="user_name" [(ngModel)]="user_name" (ngModelChange)="searchName()"></th>
     <th><input class="form-control" type="text" [(ngModel)]="projekt" (ngModelChange)="searchProject()"></th>
   </tr>
-<tr *ngFor="let arbeitszeit of arbeitszeit">
+  <tr *ngFor="let arbeitszeit of arbeitszeit">
     <th scope="row">{{arbeitszeit.datum }}</th>
     <td>{{arbeitszeit.astart}}</td>
     <td>{{arbeitszeit.aende}}</td>
@@ -34,7 +34,7 @@
     <th>{{arbeitszeit.projekt}}</th>
   </tr>
 
-</table>
+  </table>
   <button class="btn btn-primary" (click)="exportExcel()">
    Export
   </button>
