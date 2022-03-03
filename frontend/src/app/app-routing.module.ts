@@ -12,7 +12,6 @@ import {AuthGuard} from "./shared/auth.guard";
 import {RoleGuard} from "./shared/role.guard";
 
 const routes: Routes = [
-  { path: '', component: LoginComponent},
   { path: 'abwesenheit', component: AbwesenheitComponent,
   canActivate: [AuthGuard]},
   { path: 'dashboard', component: DashboardComponent,
