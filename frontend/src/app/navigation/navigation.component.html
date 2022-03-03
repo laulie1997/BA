@@ -28,6 +28,6 @@
       <button  class="btn btn-secondary" (click)="logout()">Log out</button>
       </div>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <router-outlet *ngIf="isLoggedIn()"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

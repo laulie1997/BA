@@ -33,6 +33,7 @@ import { Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 
+
 const icons = {
   boxArrowRight,
   person,
@@ -51,6 +52,7 @@ const icons = {
     HomeComponent,
     LoginComponent,
     DashboardComponent,
+
 
   ],
   imports: [
