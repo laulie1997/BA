@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {ZeiterfassungService} from "../../shared/zeiterfassung.service";
 import { Arbeitszeit } from 'src/app/models/arbeitszeit';
 import * as XLSX from 'xlsx';
+import {AngularFirestore} from "@angular/fire/compat/firestore";
+import {RoleService} from "../../shared/role.service";
+import {Observable} from "rxjs";
+// @ts-ignore
+import {User} from '../models/user';
 
 
 @Component({
@@ -20,14 +25,20 @@ export class TeamzeitenComponent implements OnInit {
   taetigkeiten!: string;
   projekt!: string;
   user_name!: string;
+  user!: Observable<User[]>;
 
-  constructor(private zs: ZeiterfassungService) { }
+  constructor(private zs: ZeiterfassungService,
+             private afs: AngularFirestore ) {
+
+  }
 
   ngOnInit(): void {
 this.zs.getValues()
       .subscribe( val => {
         this.arbeitszeit = val;
       });
+    let buchhalter = this.afs.collection('buchhalter').valueChanges();
+    console.log(JSON.stringify(buchhalter));
   }
   exportExcel(): void{
     let elements = document.getElementById('excel-table');
@@ -118,4 +129,7 @@ this.zs.getValues()
       });
     }
   }
+
+
+
 }

@@ -13,18 +13,18 @@ arbeitszeitDoc!: AngularFirestoreDocument<Arbeitszeit>;
 
 
   constructor(private afs: AngularFirestore) {
-   // this.arbeitszeitCollection = this.afs.collection('arbeitszeit');
+  this.arbeitszeitCollection = this.afs.collection('arbeitszeit');
     // @ts-ignore
     this.arbeitszeit = this.afs.collection('arbeitszeit').valueChanges();
+
   }
 
   getValues() {
     return this.arbeitszeit;
   }
 
-  addValue(arbeitszeit: Arbeitszeit) {
+  addValue(arbeitszeit:Arbeitszeit){
     this.arbeitszeitCollection.add(arbeitszeit);
-    this.arbeitszeitCollection = this.afs.collection('arbeitszeit');
   }
 
   deleteValue(arbeitszeit: Arbeitszeit){
@@ -35,4 +35,7 @@ arbeitszeitDoc!: AngularFirestoreDocument<Arbeitszeit>;
    this.arbeitszeitDoc= this.afs.doc(`arbeitszeit/${arbeitszeit.id}`);
    this.arbeitszeitDoc.update(arbeitszeit);
  }
+
+
+
 }

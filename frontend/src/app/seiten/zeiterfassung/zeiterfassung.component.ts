@@ -37,7 +37,7 @@ arbeitszeit: Arbeitszeit = {
   constructor(private authService: AuthService,
               private zs: ZeiterfassungService,
               private router: Router,
-              private afAuth: AngularFireAuth
+
               ) {
 
   }
@@ -60,7 +60,6 @@ this.zs.addValue(this.arbeitszeit);
 alert("Eintrag wurde hinzugefügt");
 this.router.navigate(['arbeitsuebersicht']);
   }
-
 
 
 }
