@@ -17,7 +17,6 @@ import { ArbeitsuebersichtComponent } from './seiten/arbeitsuebersicht/arbeitsue
 import { AbwesenheitComponent } from './seiten/abwesenheit/abwesenheit.component';
 import { UrlaubComponent } from './seiten/urlaub/urlaub.component';
 import { TeamzeitenComponent } from './seiten/teamzeiten/teamzeiten.component';
-import { HomeComponent } from './seiten/home/home.component';
 import { environment } from 'src/environments/environment.prod';
 import {AngularFireModule } from '@angular/fire/compat';
 import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
@@ -49,7 +48,6 @@ const icons = {
     AbwesenheitComponent,
     UrlaubComponent,
     TeamzeitenComponent,
-    HomeComponent,
     LoginComponent,
     DashboardComponent,
 
