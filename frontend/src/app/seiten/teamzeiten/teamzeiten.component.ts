@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ZeiterfassungService} from "../../shared/zeiterfassung.service";
 import { Arbeitszeit } from 'src/app/models/arbeitszeit';
-import * as XLSX from 'xlsx';
+//import * as XLSX from 'xlsx';
 import {AngularFirestore} from "@angular/fire/compat/firestore";
 import {RoleService} from "../../shared/role.service";
 import {Observable} from "rxjs";
@@ -40,6 +40,7 @@ this.zs.getValues()
     let buchhalter = this.afs.collection('buchhalter').valueChanges();
     console.log(JSON.stringify(buchhalter));
   }
+  /**
   exportExcel(): void{
     let elements = document.getElementById('excel-table');
     const worksheet: XLSX.WorkSheet =XLSX.utils.table_to_sheet(elements);
@@ -47,6 +48,7 @@ this.zs.getValues()
     XLSX.utils.book_append_sheet(workbook, worksheet, 'Arbeitszeiten');
     XLSX.writeFile(workbook, this.fileName);
   }
+   **/
 
   searchDate(){
     if( this.datum ==""){

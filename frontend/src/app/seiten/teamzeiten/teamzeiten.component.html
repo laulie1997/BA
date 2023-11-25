@@ -1,6 +1,6 @@
 <div class="container">
 <h1>Arbeitsübersicht</h1>
-<table id="excel-table" class="table table-striped table-hover">
+<table aria-label="übersicht" id="excel-table" class="table table-striped table-hover">
   <thead>
   <tr>
     <th scope="col">Datum</th>
@@ -14,14 +14,14 @@
   </tr>
   </thead>
 <tr>
-    <th ><input class="form-control" type="text" [(ngModel)]="datum" (ngModelChange)="searchDate()"></th>
+    <th id="search"><input class="form-control" type="text" [(ngModel)]="datum" (ngModelChange)="searchDate()"></th>
     <td><input class="form-control" type="text" [(ngModel)]="astart" (ngModelChange)="searchStart()"></td>
     <td><input class="form-control" type="text" [(ngModel)]="aende" (ngModelChange)="searchEnd()"></td>
     <td><input class="form-control" type="text" [(ngModel)]="pstart" (ngModelChange)="searchPStart()" ></td>
     <td><input class="form-control" type="text" [(ngModel)]="pende" (ngModelChange)="searchPEnd()"></td>
     <td><input class="form-control" type="text" [(ngModel)]="taetigkeiten" (ngModelChange)="searchTaetigkeit()"></td>
-    <th><input class="form-control" type="text" name="user_name" [(ngModel)]="user_name" (ngModelChange)="searchName()"></th>
-    <th><input class="form-control" type="text" [(ngModel)]="projekt" (ngModelChange)="searchProject()"></th>
+    <th id="searchName"><input class="form-control" type="text" name="user_name" [(ngModel)]="user_name" (ngModelChange)="searchName()"></th>
+    <th id="searchProject"><input class="form-control" type="text" [(ngModel)]="projekt" (ngModelChange)="searchProject()"></th>
   </tr>
   <tr *ngFor="let arbeitszeit of arbeitszeit">
     <th scope="row">{{arbeitszeit.datum }}</th>
@@ -30,13 +30,15 @@
     <td>{{arbeitszeit.pstart}}</td>
     <td>{{arbeitszeit.pende}}</td>
     <td>{{arbeitszeit.taetigkeiten}}</td>
-    <th>{{arbeitszeit.user_name}}</th>
-    <th>{{arbeitszeit.projekt}}</th>
+    <th id="username">{{arbeitszeit.user_name}}</th>
+    <th id="projekt">{{arbeitszeit.projekt}}</th>
   </tr>
 
   </table>
 
-  <button class="btn btn-primary" (click)="exportExcel()">
+  <button class="btn btn-primary" >
+        <--  (click)="exportExcel()" -->
+
    Export
   </button>
 
