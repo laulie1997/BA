@@ -1,0 +1,53 @@
+pipeline {
+    agent any
+
+    environment {
+        FIREBASE_PROJECT = 'zeiterfassung-ba'
+        FIREBASE_TOKEN = credentials('1//03eG1xnEZ-Y4UCgYIARAAGAMSNwF-L9IrZ0BjTLWSshmToygs2UuJb74uGANQbcMvGWK-lNxWU9-Dm7V-nc2NXShF6C2zqsx3nOI
+')
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // You might need to adjust the package manager (npm or yarn) based on your project
+                    bat 'npm install' // or 'yarn install'
+                }
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Adjust the build command based on your project
+                    bat 'ng build' // or 'yarn build'
+                }
+            }
+        }
+
+        stage('Firebase Login') {
+            steps {
+                script {
+                    // Log in to Firebase using the provided token
+                    bat "echo ${FIREBASE_TOKEN} | firebase login:ci"
+                }
+            }
+        }
+
+        stage('Firebase Deploy') {
+            steps {
+                script {
+                    // Adjust the deploy command based on your project
+                    bat "firebase deploy --project ${FIREBASE_PROJECT}"
+                }
+            }
+        }
+    }
+}

@@ -38,7 +38,7 @@
           },
           "configurations": {
             "production": {
-              "extraWebpackConfig": "webpack-bundle-analyzer.config.js",
+
               "budgets": [
                 {
                   "type": "initial",
