@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         FIREBASE_PROJECT = 'zeiterfassung-ba'
-        PATH = "PATH = "C:\\Users\\Laura\\AppData\\Roaming\\npm;$PATH"
        // FIREBASE_TOKEN = credentials('1//03G_TOUmfK_ZPCgYIARAAGAMSNwF-L9IrEg90p9xSiluCoUarLjIHUDEZPxZ_rvMrWOhaaLGUVeqdwo3MvRC0AC4pCpd_Jo5hvJE')
     }
 
@@ -20,7 +19,9 @@ pipeline {
             steps {
                 script {
                     // Adjust the deploy command based on your project
+                     dir('frontend/src') {
                     bat "firebase deploy --project ${FIREBASE_PROJECT}"
+                }
                 }
             }
         }
