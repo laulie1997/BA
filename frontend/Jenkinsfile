@@ -3,8 +3,7 @@ pipeline {
 
     environment {
         FIREBASE_PROJECT = 'zeiterfassung-ba'
-        FIREBASE_TOKEN = credentials('1//03eG1xnEZ-Y4UCgYIARAAGAMSNwF-L9IrZ0BjTLWSshmToygs2UuJb74uGANQbcMvGWK-lNxWU9-Dm7V-nc2NXShF6C2zqsx3nOI
-')
+        FIREBASE_TOKEN = credentials('1//03eG1xnEZ-Y4UCgYIARAAGAMSNwF-L9IrZ0BjTLWSshmToygs2UuJb74uGANQbcMvGWK-lNxWU9-Dm7V-nc2NXShF6C2zqsx3nOI')
     }
 
     stages {
