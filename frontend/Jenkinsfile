@@ -13,11 +13,11 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
+        stage('build') {
             steps {
                 script {
                     // You might need to adjust the package manager (npm or yarn) based on your project
-                    bat 'npm install' // or 'yarn install'
+                    bat 'ng build' // or 'yarn install'
                 }
             }
         }
