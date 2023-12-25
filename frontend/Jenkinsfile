@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         FIREBASE_PROJECT = 'zeiterfassung-ba'
-        FIREBASE_TOKEN = credentials('1//03G_TOUmfK_ZPCgYIARAAGAMSNwF-L9IrEg90p9xSiluCoUarLjIHUDEZPxZ_rvMrWOhaaLGUVeqdwo3MvRC0AC4pCpd_Jo5hvJE')
+       // FIREBASE_TOKEN = credentials('1//03G_TOUmfK_ZPCgYIARAAGAMSNwF-L9IrEg90p9xSiluCoUarLjIHUDEZPxZ_rvMrWOhaaLGUVeqdwo3MvRC0AC4pCpd_Jo5hvJE')
     }
 
     stages {
@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     // Adjust the deploy command based on your project
-                    bat "firebase deploy --token "$FIREBASE_TOKEN""
+                    bat "firebase deploy --project ${FIREBASE_PROJECT}"
                 }
             }
         }
