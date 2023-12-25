@@ -18,6 +18,7 @@ pipeline {
         stage('Firebase Deploy') {
             steps {
                 script {
+                bat 'npm install -g firebase-tools'
                     // Adjust the deploy command based on your project
                      dir('frontend/src') {
                     bat "firebase deploy --project ${FIREBASE_PROJECT}"
