@@ -22,14 +22,6 @@ pipeline {
             }
         }
 
-        stage('Build') {
-            steps {
-                script {
-                    // Adjust the build command based on your project
-                    bat 'ng build' // or 'yarn build'
-                }
-            }
-        }
 
 
         stage('Firebase Deploy') {
