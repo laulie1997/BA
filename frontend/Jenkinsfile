@@ -16,7 +16,7 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    // You might need to adjust the package manager (npm or yarn) based on your project
+                    bat 'cd frontend/src'
                     bat 'ng build' // or 'yarn install'
                 }
             }
