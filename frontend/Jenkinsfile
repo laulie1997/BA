@@ -13,15 +13,6 @@ pipeline {
             }
         }
 
-        stage('build') {
-            steps {
-                script {
-                    bat 'cd frontend/src'
-                    bat 'ng build' // or 'yarn install'
-                }
-            }
-        }
-
 
 
         stage('Firebase Deploy') {
